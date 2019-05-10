@@ -1,0 +1,18 @@
+<div class="col-sm-3">
+  <div class="card clearfix" class="hovered" (mouseenter)="mouseenterCard()" (mouseleave)="mouseleaveCard()" style="width: 14rem;">
+    <div class="imageWrapper ">
+      <img src= "{{card.image}}" class="card-img-top" alt="card.image">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{card.name}}</h5>
+      <p class="card-price">{{card.price}} грн.</p>
+
+      <div class="buttons">
+        <a (click)="addToChart(card)" class="btn btn-success btn-sm buy" >
+          <i class="fas fa-shopping-cart"></i> Купити
+        </a>
+        <a routerLink="/detail/{{card.id}}" class="btn btn-primary btn-sm">Детальніше</a>
+      </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,10 @@
+
+.cardDetailsWrapper{
+    display: flex;
+}
+.cardImage{
+    width: inherit
+}
+.buy{
+    margin-top: 20px;
+}

@@ -1,0 +1,9 @@
+.wrapper{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 100px;
+}
+
+.worksTime{
+    margin-left: 15px;
+}

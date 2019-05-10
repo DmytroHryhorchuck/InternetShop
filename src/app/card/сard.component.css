@@ -1,0 +1,31 @@
+.card{
+    margin-top: 5px;
+}
+.imageWrapper{
+   height: 275px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.card-price{
+    font-size: 20px;
+}
+.card-title{
+    font-size: 20px;
+}
+.hovered{
+    margin: 15px 0;
+}
+.hovered:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: 1s all;
+   }
+
+.buy{
+    color: white
+}
+.card-img-top{
+    max-height: 290px;
+}

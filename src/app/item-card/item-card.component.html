@@ -1,0 +1,32 @@
+    <div class="itemCardWrapper" *ngIf="card">
+      <h1>{{card.type}} {{card.name}}</h1> 
+      <div class="cardDetailsWrapper">
+        <div class="imageWrapper col-md-4">
+<img [src]="card.image" alt="card.image" class=" cardImage">
+
+
+        </div>
+        
+    
+     <div class="cardDetails col-md-8">
+       <h2>Характеристики: </h2>
+        <p> {{card.text}}</p>
+        <h2 class="card-price">Ціна: {{card.price}} грн.</h2>
+  <a (click)="addToChart(card)" class="btn btn-success btn-bg buy" >
+            <i class="fas fa-shopping-cart"></i> Купити товар
+          </a>
+     </div>
+        
+      </div>
+    
+      <div class="fullCardDetailText">
+          <h2>Опис товару: </h2>
+          <p> {{card.detail}}</p>
+      </div>
+     
+    
+      <iframe width="868" height="488" [src]="url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+   
+   
+      

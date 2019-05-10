@@ -1,0 +1,21 @@
+.searchFormLabel, .cardItemTitle{
+    font-size: 30px;
+    margin-top: 25px;
+}
+.h-200{
+    max-height: 25%;
+}
+#carouselExampleIndicators{
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.filterProducts{
+    display: flex;
+}
+.filter{
+    margin-bottom: 150px ;
+}
+.serchWrap{
+    margin-top: 20px;
+}
