@@ -1,10 +1,16 @@
+
 .container{
-padding-top: 40px;
+padding-top: 20px;
+margin-bottom: 220px; 
 }
 .nav-link{
     font-size: 25px;
 }
-
+.navbar{
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+   }
 .shopingCart{
     font-size: 35px;
     position: relative;
@@ -13,7 +19,7 @@ padding-top: 40px;
 }
 .shopingCartItemsQuantity{
     position: absolute;
-    background-color: red;
+    background-color:red;
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -28,3 +34,34 @@ font-size: 18px;
     color: greenyellow;
     
 }
+.footer {
+height: 120px;
+line-height: 25px;
+display: flex;
+justify-content: space-around;
+align-items: center;
+position: absolute; 
+bottom: 0; 
+width: 100%;
+
+}
+.fa {
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    color: white
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+      color: chartreuse
+  }
+  .footerInfo{
+      font-size: 25px;
+      color: white;
+      font-weight: bold;
+      text-align: center
+  }
+

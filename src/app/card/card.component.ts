@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../product';
 import { CardService } from '../card.service';
@@ -9,34 +9,51 @@ templateUrl: './card.component.html',
 styleUrls: ['./сard.component.css']
 })
 
-export class CardComponent {
+export class CardComponent implements OnInit {
+
+   itemInCart = false;
+   buyItem = true;
+   ishovered = false;
+
    @Input() card;
 
    constructor(private router: Router, private cardService: CardService){}
 
-   istextHovered = false;
-   ishovered = false;
+   ngOnInit(){
+      this.checkIsProductInChart();
+   }
 
    mouseenterCard(){
-   this.istextHovered = true;
-   this.ishovered = true;
-}
-mouseleaveCard(){
-   this.istextHovered = false;
-   this.ishovered = false;
-}
-
-addToChart(item: Product){
-   const products = JSON.parse(localStorage.getItem('products'));
-   if(products){
-      products.push(item);
-      localStorage.setItem('products', JSON.stringify(products));
-   }else{
-      localStorage.setItem('products', JSON.stringify([item]));
-      alert('lalala')
+      this.ishovered = true;
    }
-   this.cardService.changeChartQuantity.next();
-   this.router.navigateByUrl('shopingCart');
-}
 
+   mouseleaveCard(){
+      this.ishovered = false;
+   }
+
+   checkIsProductInChart(){
+      const products = JSON.parse(localStorage.getItem('products'));
+      products.forEach(prod => {
+         if(prod.id === this.card.id){
+            this.itemInCart = true;
+            this.buyItem = false;
+         }
+      })
+   }
+
+   addToChart(item: Product){
+      const products = JSON.parse(localStorage.getItem('products'));
+      if(products){
+         if(products.find(x => x.id === item.id)) return;
+         products.push(item);
+         localStorage.setItem('products', JSON.stringify(products));
+      }else{
+         localStorage.setItem('products', JSON.stringify([item]));
+      }
+
+      this.cardService.changeChartQuantity.next();
+
+      this.router.navigateByUrl('shopingCart');
+   }
+   
 }

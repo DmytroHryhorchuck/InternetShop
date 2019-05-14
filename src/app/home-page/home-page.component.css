@@ -7,15 +7,13 @@
 }
 #carouselExampleIndicators{
     max-width: 80%;
-    margin: 0 auto;
+    margin: 90px auto 15px;
 }
 
 .filterProducts{
     display: flex;
 }
-.filter{
-    margin-bottom: 150px ;
-}
+
 .serchWrap{
     margin-top: 20px;
 }

@@ -20,7 +20,7 @@
 .hovered:hover{
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    transition: 1s all;
+    transition: 0,7s all;
    }
 
 .buy{

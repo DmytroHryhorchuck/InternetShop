@@ -15,13 +15,17 @@ export class HomePageComponent implements OnInit, OnDestroy {
   showCard: Product[];
   searchstr = "";
   subsProducts: Subscription;
+  itemInCart = false;
+  buyItem = true;
+
+  showMobile: boolean = true;
+  showTablet: boolean = true;
 
   constructor(private cardService: CardService){}
 
   ngOnInit (){
     this.getProducts();
- 
-  }
+    }
 
   getProducts(){
     this.subsProducts = this.cardService.getProducts()
@@ -31,17 +35,20 @@ export class HomePageComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     this.subsProducts.unsubscribe();
   }
-  filterMobiles(){
-    this.showCard = this.cards.filter(card => card.type === 'Мобільний телефон')
+
+//   filterMobiles(){
+//     this.showCard = this.cards.filter(card => card.type === 'Мобільний телефон')
   
-  }
+//   }
  
-  filterPads(){
-    this.showCard = this.cards.filter(card => card.type === 'Планшет')
- }
+//   filterPads(){
+//     this.showCard = this.cards.filter(card => card.type === 'Планшет')
+//  }
  
  allproducts(){
-  this.showCard = this.cards
+  // this.showCard = this.cards
+  this.showMobile = true;
+  this.showTablet = true;
   }
 
 }

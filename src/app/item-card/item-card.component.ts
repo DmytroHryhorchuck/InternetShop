@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import { DomSanitizer} from '@angular/platform-browser';
-import { Subscription } from 'rxjs';
+import { Subscription, from } from 'rxjs';
 import { Router } from '@angular/router';
 import { CardService } from '../card.service';
 import { Product } from '../product';
@@ -16,7 +16,8 @@ export class ItemCardComponent implements OnInit, OnDestroy {
 
   card: Product;
   subsCard: Subscription;
-
+  itemInCart = false;
+   buyItem = true;
   constructor(
     private cardService: CardService,
     private router:  ActivatedRoute,
@@ -30,7 +31,17 @@ export class ItemCardComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.getCard();
+    this.checkIsProductInChart()
   }
+  checkIsProductInChart(){
+    const products = JSON.parse(localStorage.getItem('products'));
+    products.forEach(prod => {
+       if(prod.id === this.card.id){
+          this.itemInCart = true;
+          this.buyItem = false;
+       }
+    })
+ }
 
   getCard(){
     const id = +this.router.snapshot.paramMap.get('id');
@@ -39,14 +50,17 @@ export class ItemCardComponent implements OnInit, OnDestroy {
   }
   addToChart(item: Product){
     const products = JSON.parse(localStorage.getItem('products'));
-    if(products){
+        if(products){
        products.push(item);
        localStorage.setItem('products', JSON.stringify(products));
+      
     }else{
        localStorage.setItem('products', JSON.stringify([item]));
+ 
     }
     this.cardService.changeChartQuantity.next();
     this.routerUrl.navigateByUrl('shopingCart');
+ 
  }
 
   ngOnDestroy(){

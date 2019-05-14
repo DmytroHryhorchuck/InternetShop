@@ -21,12 +21,25 @@
       </li>
     </ul>
   </div>
-  <a class="nav-link shopingCart" [class.shopingCartActive]="currentPage ==='shopingCart'"  routerLink="/shopingCart">
+  <a class="nav-link shopingCart" [class.shopingCartActive]="currentPage ==='shopingCart'" routerLink="/shopingCart">
     <i class="fas fa-shopping-cart"></i>
-    <span class="shopingCartItemsQuantity" >{{allItemsQuantity}}</span>
+    <span class="shopingCartItemsQuantity">{{allItemsQuantity}}</span>
   </a>
-  
+
 </nav>
 <div class="container">
   <router-outlet></router-outlet>
+</div>
+<div class="footer bg-dark">
+  <p class="footerInfo">Звяжіться з нами: <br><i class="fas fa-phone-volume"></i> +30944010562</p>
+  <p class="footerInfo">© 2019. Інтернет-магазин Huawei</p>
+
+
+  <div class="social footerInfo"><a href="#" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-skype"></a>
+    <a href="#" class="fa fa-twitter"></a>
+    <a href="#" class="fa fa-google"></a>
+    <a href="#" class="fa fa-linkedin"></a>
+    <a href="#" class="fa fa-youtube"></a>
+    <a href="#" class="fa fa-instagram"></a></div>
 </div>

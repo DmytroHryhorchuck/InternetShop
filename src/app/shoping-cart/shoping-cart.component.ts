@@ -4,6 +4,7 @@ import { Product } from '../product';
 import { ActivatedRoute } from '@angular/router'
 import { DomSanitizer} from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-shoping-cart',
@@ -15,6 +16,7 @@ export class ShopingCartComponent implements OnInit {
   items: Product[];
   sum: number;
   total:number;
+  emptyShopingCart:boolean;
 
   constructor(
     private cardService: CardService,
@@ -25,8 +27,16 @@ export class ShopingCartComponent implements OnInit {
 
   ngOnInit() {
     this.getData();
-  }
 
+    this.checkShopingCart();
+  }
+  checkShopingCart(){
+    const products = JSON.parse(localStorage.getItem('products'));
+    if (products.length===0){
+          this.emptyShopingCart=true
+    }
+    else(this.emptyShopingCart=false)
+  }
   getData(){
     this.items = JSON.parse(localStorage.getItem('products'));
     this.getTotal();
@@ -41,6 +51,7 @@ export class ShopingCartComponent implements OnInit {
     this.getTotal();
     localStorage.setItem('products', JSON.stringify(this.items));
     this.cardService.changeChartQuantity.next();
+    this.checkShopingCart()
   }
 
   getTotal(){

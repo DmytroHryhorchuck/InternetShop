@@ -1,5 +1,6 @@
-<button type="button" class="btn btn-primary" routerLink="/" style="margin-bottom: 15px">Продовжити покупки</button>
-<table border="1" class="table table-hover table-dark" style="text-align:center">
+<div class="shopingCardWrapper">
+<button *ngIf="!emptyShopingCart" type="button" class="btn btn-primary" routerLink="/" style="margin-bottom: 15px">Продовжити покупки</button>
+<table *ngIf="!emptyShopingCart" border="1" class="table table-hover table-dark" style="text-align:center">
   <thead >
     <tr>
       <th>Категорія</th>
@@ -26,14 +27,15 @@
   </tbody>
   
  </table>
- <h2>
+ <div *ngIf="emptyShopingCart" class="emptyShopingCart">Кошик пустий</div>
+ <h2 *ngIf="!emptyShopingCart">
    Разом до оплати: {{sum}} <i class="fas fa-hryvnia" style="font-size: 25px"></i>
  </h2>
 
 
 
 
- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Оформити замовлення</button>
+ <button *ngIf="!emptyShopingCart" type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Оформити замовлення</button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -100,8 +102,9 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Скасувати замовлення</button>
-        <button type="button" class="btn btn-primary">Надіслати замовлення</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Надіслати замовлення</button>
       </div>
     </div>
   </div>
+</div>
 </div>

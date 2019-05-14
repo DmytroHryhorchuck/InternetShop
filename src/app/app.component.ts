@@ -14,14 +14,15 @@ export class AppComponent implements OnInit{
 
   currentPage: string;
   invisible = false;
-  allItemsQuantity: number;
+  allItemsQuantity: number=0;
 
   constructor(private router: Router, private cardService: CardService){}
 
  ngOnInit(){
   this.router.events.subscribe(() => this.checkActiveLinkMenu());
-  this.shopingCartItemsQuantity();
   this.cardService.changeChartQuantity.subscribe(() => this.shopingCartItemsQuantity());
+  this.shopingCartItemsQuantity();
+  
  }
 
  checkActiveLinkMenu(){

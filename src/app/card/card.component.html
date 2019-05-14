@@ -8,10 +8,13 @@
       <p class="card-price">{{card.price}} грн.</p>
 
       <div class="buttons">
-        <a (click)="addToChart(card)" class="btn btn-success btn-sm buy" >
+        <button *ngIf="buyItem" (click)="addToChart(card)" class="btn btn-success btn-sm buy" >
           <i class="fas fa-shopping-cart"></i> Купити
-        </a>
-        <a routerLink="/detail/{{card.id}}" class="btn btn-primary btn-sm">Детальніше</a>
+        </button>
+        <button *ngIf="itemInCart" class="btn btn-warning btn-sm buy" >
+          У кошику
+        </button>
+        <button routerLink="/detail/{{card.id}}" class="btn btn-primary btn-sm">Детальніше</button>
       </div>
   </div>
 </div>
