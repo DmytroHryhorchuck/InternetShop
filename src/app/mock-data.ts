@@ -162,7 +162,7 @@ detail:`
 video: '//www.youtube.com/embed/y6mqHps5kqY',
 quantity: 1,
 },
-{id: 17, name: 'Захисне скло ArmorStandart для Huawei P Smart Plus',
+{id: 17, name: 'Захисне скло ArmorStandart для Huawei P Smart',
 text:`Панель Love Mei Powerful для Huawei P30 Pro Black (BC_703462)`,
 image:'https://i2.rozetka.ua/goods/11236066/armorstandart_arm52284_gfg_wt_images_11236066794.jpg',
 price: 180,
