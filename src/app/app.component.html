@@ -28,7 +28,7 @@
 
 </nav>
 <div class="container">
-  <router-outlet></router-outlet>
+  <router-outlet (activate)="onActivate($event)"></router-outlet>
 </div>
 <div class="footer bg-dark">
   <p class="footerInfo">Звяжіться з нами: <br><i class="fas fa-phone-volume"></i> +30944010562</p>

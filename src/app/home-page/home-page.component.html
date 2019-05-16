@@ -32,11 +32,9 @@
 
 
  <h2>Фільтр товарів</h2>
-    
+    <div class="filters">
   <div class="custom-control custom-radio custom-control-inline">
-    <!-- <input type="radio" checked (click)="allproducts()" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline1">Усі товари</label> -->
-    <button (click)="allproducts()">Усі товари</button>
+    <button class="btn btn-info" (click)="allproducts()">Усі товари</button>
   </div>
   <div class="custom-control custom-radio custom-control-inline">
     <input type="checkbox" [(ngModel)]="showMobile" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
@@ -46,11 +44,13 @@
     <input type="checkbox" [(ngModel)]="showTablet" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
     <label class="custom-control-label" for="customRadioInline3">Планшети</label>
   </div>
+</div>
 <div class="row all filter" #rowItem>
   <app-card *ngFor="let card of showCard | search: searchstr | filterProduct: showMobile : showTablet" [card]="card"></app-card>  
-  <div *ngIf="showCard.length">Товар не знайдено</div>
+  
+  <div class="noItem"*ngIf="!(showCard | search: searchstr).length">Товар не знайдено</div> 
 </div>
-
+  
 
 
 

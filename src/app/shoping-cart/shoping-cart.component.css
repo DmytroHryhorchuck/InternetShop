@@ -9,8 +9,10 @@
 }
 
 .emptyShopingCart{
-    font-size: 25px;
+    font-size: 45px;
     font-weight: bold;
     text-align: center;
+    margin-top: 20px;
+    color: dimgrey
   
 }

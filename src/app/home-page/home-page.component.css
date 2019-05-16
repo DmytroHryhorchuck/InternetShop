@@ -17,3 +17,15 @@
 .serchWrap{
     margin-top: 20px;
 }
+.noItem{
+font-size: 45px;
+color: darkgray;
+text-align: center;
+
+}
+h2{
+    margin: 25px 0 25px;
+}
+.filters{
+    margin-bottom: 25px;
+}

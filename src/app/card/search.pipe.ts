@@ -8,3 +8,4 @@ export class Searchpipe implements PipeTransform {
         return cards.filter(card => card.name.toLowerCase().includes(value.toLowerCase()))
     }
 }
+

@@ -20,6 +20,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   showMobile: boolean = true;
   showTablet: boolean = true;
+  
 
   constructor(private cardService: CardService){}
 
@@ -35,19 +36,9 @@ export class HomePageComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     this.subsProducts.unsubscribe();
   }
-
-//   filterMobiles(){
-//     this.showCard = this.cards.filter(card => card.type === 'Мобільний телефон')
-  
-//   }
- 
-//   filterPads(){
-//     this.showCard = this.cards.filter(card => card.type === 'Планшет')
-//  }
  
  allproducts(){
-  // this.showCard = this.cards
-  this.showMobile = true;
+   this.showMobile = true;
   this.showTablet = true;
   }
 
