@@ -1,8 +1,12 @@
 .card{
     margin-top: 5px;
+
+    
 }
 .imageWrapper{
-   height: 275px;
+   max-height: 300px;
+   min-height: 300px;
+   padding: 20px;
 }
 .buttons{
     display: flex;
@@ -28,4 +32,6 @@
 }
 .card-img-top{
     max-height: 290px;
+
+    
 }

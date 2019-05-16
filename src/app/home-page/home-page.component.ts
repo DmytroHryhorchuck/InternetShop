@@ -4,6 +4,7 @@ import { Product } from '../product';
 import { Subscription } from 'rxjs';
 import { data } from '../mock-data';
 
+
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -18,8 +19,14 @@ export class HomePageComponent implements OnInit, OnDestroy {
   itemInCart = false;
   buyItem = true;
 
-  showMobile: boolean = true;
-  showTablet: boolean = true;
+  showMobile: boolean = false;
+  showTablet: boolean = false;
+  showCover: boolean = false;
+  showGlass: boolean = false;
+  
+
+  p: number = 1;
+  collection: any[] = this.showCard;  
   
 
   constructor(private cardService: CardService){}
@@ -40,6 +47,8 @@ export class HomePageComponent implements OnInit, OnDestroy {
  allproducts(){
    this.showMobile = true;
   this.showTablet = true;
+  this.showCover = true;
+  this.showGlass = true;
   }
 
 }

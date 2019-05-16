@@ -28,13 +28,13 @@
     <h2>Пошук по назві товару</h2>
     <input class="form-control col-sm-9" id="exampleInput" [(ngModel)]="searchstr" placeholder="Пошук товару">
   </div>
- <p>{{noItem}}</p>
 
 
- <h2>Фільтр товарів</h2>
+
+ <h2>Каталог товарів</h2>
     <div class="filters">
   <div class="custom-control custom-radio custom-control-inline">
-    <button class="btn btn-info" (click)="allproducts()">Усі товари</button>
+    <button class="btn btn-info" data-toggle="button" (click)="allproducts();">Усі товари</button>
   </div>
   <div class="custom-control custom-radio custom-control-inline">
     <input type="checkbox" [(ngModel)]="showMobile" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
@@ -44,12 +44,30 @@
     <input type="checkbox" [(ngModel)]="showTablet" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
     <label class="custom-control-label" for="customRadioInline3">Планшети</label>
   </div>
+  <div class="custom-control custom-radio custom-control-inline">
+    <input type="checkbox" [(ngModel)]="showCover" id="customRadioInline4" name="customRadioInline1" class="custom-control-input">
+    <label class="custom-control-label" for="customRadioInline4">Чохли</label>
+  </div>
+  <div class="custom-control custom-radio custom-control-inline">
+    <input type="checkbox" [(ngModel)]="showGlass" id="customRadioInline5" name="customRadioInline1" class="custom-control-input">
+    <label class="custom-control-label" for="customRadioInline5">Захисне скло</label>
+  </div>
 </div>
 <div class="row all filter" #rowItem>
-  <app-card *ngFor="let card of showCard | search: searchstr | filterProduct: showMobile : showTablet" [card]="card"></app-card>  
+  <app-card *ngFor="let card of showCard | search: searchstr | filterProduct: showMobile : showTablet : showCover : showGlass | paginate: { itemsPerPage: 8, currentPage: p }" [card]="card"></app-card>  
   
   <div class="noItem"*ngIf="!(showCard | search: searchstr).length">Товар не знайдено</div> 
 </div>
+<pagination-controls (pageChange)="p = $event" maxSize="8"
+directionLinks="true"
+autoHide="true"
+responsive="true"
+previousLabel="Попередня"
+nextLabel="Наступна"
+screenReaderPaginationLabel="Pagination"
+screenReaderPageLabel="page"
+screenReaderCurrentLabel="You're on page">></pagination-controls>
+
   
 
 

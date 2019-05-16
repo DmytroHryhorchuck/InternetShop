@@ -18,9 +18,11 @@
     margin-top: 20px;
 }
 .noItem{
-font-size: 45px;
-color: darkgray;
-text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+  
+    color: dimgrey
 
 }
 h2{

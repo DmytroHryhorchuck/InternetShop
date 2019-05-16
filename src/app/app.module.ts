@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import {NgxPaginationModule} from 'ngx-pagination'; 
 
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
@@ -35,6 +36,7 @@ import { Searchpipe } from './card/search.pipe';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
