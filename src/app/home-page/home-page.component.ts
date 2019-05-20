@@ -19,11 +19,11 @@ export class HomePageComponent implements OnInit, OnDestroy {
   itemInCart = false;
   buyItem = true;
 
-  showMobile: boolean = false;
-  showTablet: boolean = false;
-  showCover: boolean = false;
-  showGlass: boolean = false;
-  
+  showMobile: boolean = true;
+  showTablet: boolean = true;
+  showCover: boolean = true;
+  showGlass: boolean = true;
+
 
   p: number = 1;
   collection: any[] = this.showCard;  
@@ -45,12 +45,12 @@ export class HomePageComponent implements OnInit, OnDestroy {
   }
  
  allproducts(){
-   this.showMobile = true;
+  this.showMobile = true;
   this.showTablet = true;
   this.showCover = true;
   this.showGlass = true;
   }
-
+ 
 }
 
 

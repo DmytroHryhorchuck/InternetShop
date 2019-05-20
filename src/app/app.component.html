@@ -23,7 +23,7 @@
   </div>
   <a class="nav-link shopingCart" [class.shopingCartActive]="currentPage ==='shopingCart'" routerLink="/shopingCart">
     <i class="fas fa-shopping-cart"></i>
-    <span class="shopingCartItemsQuantity">{{allItemsQuantity}}</span>
+    <span *ngIf ="allItemsQuantity>0" class="shopingCartItemsQuantity">{{allItemsQuantity}}</span>
   </a>
 
 </nav>

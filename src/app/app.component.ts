@@ -26,12 +26,15 @@ export class AppComponent implements OnInit{
  }
 
  checkActiveLinkMenu(){
-  if(this.router.url.includes('home')) this.currentPage = 'home';
-  else if(this.router.url.includes('contacts')) this.currentPage = 'contacts';
-  else if(this.router.url.includes('shopingCart')) this.currentPage = 'shopingCart';
-  else if(this.router.url.includes('delivery')) this.currentPage = 'delivery';
-  else if(this.router.url.includes('payment')) this.currentPage = 'payment';
- }
+   switch(this.router.url.includes('')){
+    case this.router.url.includes('home'): this.currentPage = 'home'; break;
+    case this.router.url.includes('contacts'): this.currentPage = 'contacts'; break;
+    case this.router.url.includes('shopingCart'): this.currentPage = 'shopingCart'; break;
+    case this.router.url.includes('delivery'): this.currentPage = 'delivery'; break;
+    case this.router.url.includes('payment'): this.currentPage = 'payment'; break;
+   }
+  }
+ 
 
  shopingCartItemsQuantity(){
   const products = JSON.parse(localStorage.getItem('products'));
